@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <h1 style="color: red;">
+            Hola mira mira mi plantillaaaaaa
+        </h1>
+
+        {# NO TEMAS DISEÑADOR! IGNORA ESA PARTE #}
+        {% comment %}
+            comentario largo
+        {% endcomment %}
+
+
+        {% if nombre_persona == 'Profesor Juan' %}
+
+            <p>El curso lo imparte el profesor titular</p>
+
+       
+        {% else %} 
+            <p>El curso lo imparte el profesor suplente</p>
+
+        {% endif %}    
+
+
+
+        <p>El nombre del profesor es: {{nombre_persona.upper}} {{apellido_persona|upper}}</p>
+        <p>Estamos con las plantillas al d&iacute;a: {{Momento_actual.day}}/{{Momento_actual.month}}/{{Momento_actual.year}}</p>
+        <p>La hora es: {{Momento_actual.hour}}:{{Momento_actual.minute}}:{{Momento_actual.second}}</p>
+        <p><strong>Temas del curso:</strong>   </p>
+        <p>
+            <ul>
+            {% if temas %}
+                {% for elTema in temas %}
+                
+                    <li>{{elTema|first|upper}}</li>
+                    
+
+
+
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos que mostrar</p>
+            {% endif %}
+
+            </ul>
+        </p>
+        </body>
+</html>
